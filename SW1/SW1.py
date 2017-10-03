@@ -219,20 +219,20 @@ def morseZ():  # The Morse for Z, ....
     letterspace()
 
 
-morse = {"A": morseA, "a": morseA, "B": morseB, "C": morseC, "D": morseD, "E": morseE, "F": morseF,
+morse = {"A": morseA, "B": morseB, "C": morseC, "D": morseD, "E": morseE, "F": morseF,
          "G": morseG, "H": morseH, "I": morseI, "J": morseJ, "K": morseK, "L": morseL,
          "M": morseM, "N": morseN, "O": morseO, "P": morseP, "Q": morseQ, "R": morseR,
          "S": morseS, "T": morseT, "U": morseU, "V": morseV, "W": morseW, "X": morseX,
-         "Y": morseY, "Z": morseZ}
+         "Y": morseY, "Z": morseZ, " ": wordspace}
 
 os.system('clear')  # Clears the terminal window
 
 print("Morse code")
-
-
-# Prompt the user for input
-letter = input("enter your message. ")
-
-#print(letter)
-
-morse.get(letter, "None")()
+while True:
+    # Prompt the user for input
+    message = input("enter your message. ")
+    # Add line for changing all input to upper case
+    message = message.upper()
+    for i in message:
+        print(i)
+        morse.get(i, "None")()
