@@ -219,39 +219,20 @@ def morseZ():  # The Morse for Z, ....
     letterspace()
 
 
+morse = {"A": morseA, "a": morseA, "B": morseB, "C": morseC, "D": morseD, "E": morseE, "F": morseF,
+         "G": morseG, "H": morseH, "I": morseI, "J": morseJ, "K": morseK, "L": morseL,
+         "M": morseM, "N": morseN, "O": morseO, "P": morseP, "Q": morseQ, "R": morseR,
+         "S": morseS, "T": morseT, "U": morseU, "V": morseV, "W": morseW, "X": morseX,
+         "Y": morseY, "Z": morseZ}
+
 os.system('clear')  # Clears the terminal window
 
 print("Morse code")
 
 
 # Prompt the user for input
-def translate():
-    msg = raw_input('MESSAGE: ')
+letter = input("enter your message. ")
 
-    for char in msg:
-        print CODE[char.upper()],
-    raw_input("When done, press [ENTER]")
+#print(letter)
 
-
-if __name__ == "__main__":
-    main()
-
-
-# Added code from web, not functional
-loop_count = input("How many times would you like THOMAS to loop? ")
-loop_count = int(loop_count)  # Convert text input into an integer
-while loop_count > 0:  # Loop around the chosen number of times
-    morseT()
-    letterspace()
-    morseH()
-    letterspace()
-    morseO()
-    letterspace()
-    morseM()
-    letterspace()
-    morseA()
-    letterspace()
-    morseS()
-    letterspace()
-    wordspace()
-    loop_count = loop_count - 1
+morse.get(letter, "None")()
