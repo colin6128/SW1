@@ -236,3 +236,11 @@ while True:
     for i in message:
         print(i)
         morse.get(i, "None")()
+    choice = input("Would you like to input a new (n) message or quit (q): ")
+    choice = choice.lower
+    if choice = "q":
+        break
+    elif choice = "n":
+        continue
+    else print(Please pick either n or q")
+
